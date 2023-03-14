@@ -1,0 +1,23 @@
+// Verificación de si se ganó el juego
+if (detectarColision(jugador, meta)) {
+  if (falaciasResueltas === 10) {
+    alert("¡Felicidades! Has ganado el juego resolviendo todas las falacias.");
+  } else {
+    alert("Lo siento, aún te quedan falacias por resolver.");
+  }
+}
+
+// Función para actualizar el canvas
+function actualizar() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  dibujarLaberinto();
+  dibujarJugador();
+  dibujarMeta();
+  detectarColision(jugador, meta);
+}
+
+setInterval(actualizar, 10);
+
+</script>
+</body>
+</html>
